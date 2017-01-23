@@ -57,7 +57,7 @@
   "initial function to run solution to problem 3"
   []
   (println "Reading input text file...")
-  (def input-string (slurp "src/aoc_solutions/day3input.txt"))
+  (def input-string (slurp "resources/day3input.txt"))
   (parse-string input-string)
   (count-valid-tris input-vec)
   (println (str "Method #1: " @total-tris))

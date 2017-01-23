@@ -1,36 +1,16 @@
-# aoc-solutions
+# Advent of Code Solutions
 
-FIXME: description
+This repo has my solutions for Advent of Code written in Clojure
 
 ## Installation
 
-Download from http://example.com/FIXME.
+URL: https://github.com/johncoleman83/aoc-solutions
+Solutions compiled using Leiningen - https://leiningen.org/
 
 ## Usage
 
-FIXME: explanation
-
-    $ java -jar aoc-solutions-0.1.0-standalone.jar [args]
-
-## Options
-
-FIXME: listing of options this app accepts.
-
-## Examples
-
-...
-
-### Bugs
-
-...
-
-### Any Other Sections
-### That You Think
-### Might be Useful
+Run my code using input .txt files and output will reveal solutions to Advent of Code Problems
 
 ## License
 
-Copyright © 2017 FIXME
-
-Distributed under the Eclipse Public License either version 1.0 or (at
-your option) any later version.
+Copyright WTFPL <a href="http://www.wtfpl.net/" target="_blank">http://www.wtfpl.net/</a> – Do What the Fuck You Want to Public License.
