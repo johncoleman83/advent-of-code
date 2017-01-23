@@ -10,5 +10,3 @@ pom.xml.asc
 .hgignore
 .hg/
 *~
-/resources/*~
-/src/aoc-solutions/*~
