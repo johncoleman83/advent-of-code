@@ -9,4 +9,6 @@ pom.xml.asc
 /.nrepl-port
 .hgignore
 .hg/
-**~
+*~
+/resources/*~
+/src/aoc-solutions/*~
