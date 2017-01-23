@@ -1,0 +1,10 @@
+(ns aoc-solutions.core
+  (require [aoc-solutions.day3 :as day3])
+  (:gen-class))
+
+(defn -main
+  "Main function"
+  [& args]
+  (if (= "3" (first args))
+        (day3/answer)
+    	(println "no solution yet.")))
