@@ -3,6 +3,7 @@
 Advent of Code 2016: Day 4
 """
 import os
+import string
 testinstructions = """aaaaa-bbb-z-y-x-123[abxyz]
 a-b-c-d-e-f-g-h-987[abcde]
 not-a-real-room-404[oarel]
@@ -42,6 +43,21 @@ def sort_by_frequencies(alphas):
     newa = ''.join([k[0] for k in sorted(items, key=lambda x: -len(x))[:5]])
     return newa
 
+def ceasarcipher(sentence, shift):
+    """
+    uses ceasar cipher to decrypt sentence
+    """
+    alphabet = string.ascii_lowercase * 2
+    newsentence = []
+    for word in sentence:
+        newword = []
+        for let in word:
+            index = ord(let) - 97
+            newindex = index + shift
+            newword.append(alphabet[newindex])
+        newsentence.append(''.join(newword))
+    return ' '.join(newsentence)
+
 def encryptrooms(dayinput):
     """
     first half solver:
@@ -50,20 +66,18 @@ def encryptrooms(dayinput):
     realrooms = []
     cases = dayinput.split('\n')
     for encrypted in cases:
-        #print("-------------------------------")
-        #print(encrypted)
-        #print("-------------------------------")
         e = encrypted.split('[')
         checksum = e[1][:-1]
         sector = int(e[0].split('-')[-1])
         alphas = ''.join(sorted(''.join(e[0].split('-')[:-1])))
         sortedalphas = sort_by_frequencies(alphas)
         if sortedalphas == checksum:
-            #print(sortedalphas, sector)
+            sentence = e[0].split('-')[:-1]
+            decryptedsentence = ceasarcipher(sentence, sector % 26)
+            if 'northpole object storage' in decryptedsentence:
+                print(encrypted)
+                print(decryptedsentence, sector)
             realrooms.append(sector)
-        else:
-            #print("DECOY", sortedalphas)
-            pass
     print(sum(realrooms))
 
 def app():
