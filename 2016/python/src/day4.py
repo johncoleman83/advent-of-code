@@ -29,7 +29,7 @@ def readdayinput():
 
 def sort_by_frequencies(alphas):
     """
-    returns dict of frequencies of the alphas
+    returns new string sorted by frequencies of alphas
     """
     items = []
     temp = alphas[0]
