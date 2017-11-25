@@ -15,7 +15,11 @@ def readdayinput():
     """
     thisfile = os.path.basename(__file__)
     thisfile = thisfile[:len(thisfile) - 3]
-    dayinputfile = "../resources/{}input.txt".format(thisfile)
+    if __name__ == "__main__":
+        resource = "../resources"
+    else:
+        resource = "./resources"
+    dayinputfile = "{}/{}input.txt".format(resource, thisfile)
     with open(dayinputfile, mode='r', encoding='utf-8') as fileio:
         dayinput = fileio.read()
     dayinput = dayinput.strip('\n')
@@ -32,7 +36,6 @@ def solvebathroom(dayinput):
     cases = dayinput.split('\n')
     positions = [x for x in range(1, 10)]
     index = 4
-    print()
     for case in cases:
         for d in case:
             if d == "U" and index > 2:
@@ -62,7 +65,6 @@ def solvediamond(dayinput):
         "R": [0, 3, 8, 11, 12],
         "L": [0, 1, 4, 9, 12]
     }
-    print()
     for case in cases:
         for d in case:
             if d == "U" and index not in restrictions[d]:
@@ -83,10 +85,18 @@ def solvediamond(dayinput):
     print(''.join(code))
 
 
+def app():
+    """
+    runs day application
+    """
+    print("Day #2:")
+    dayinput = readdayinput()
+    solvebathroom(dayinput)
+    solvediamond(dayinput)
+
+
 if __name__ == "__main__":
     """
     MAIN APP
     """
-    dayinput = readdayinput()
-    solvebathroom(dayinput)
-    solvediamond(dayinput)
+    app()
