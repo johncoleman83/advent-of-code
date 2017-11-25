@@ -18,4 +18,4 @@ http://www.davidjohncoleman.com/
 
 ## License
 
-Copyright WTFPL <a href="http://www.wtfpl.net/" target="_blank">http://www.wtfpl.net/</a> – Do What the Fuck You Want to Public License.
+MIT License
