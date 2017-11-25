@@ -1,12 +1,12 @@
 # Advent of Code Solutions
 
-This repo has my (David John Coleman II) solutions for Advent of Code organized
-by year and language solved in
+My solutions for Advent of Code organized by **year** and **language** solved in
 
 ## Installation
 
-* URL: https://github.com/johncoleman83/advent-of-code
-* Clojure solutions compiled using Leiningen - https://leiningen.org/
+* Clojure:
+  * git URL: [this repo](https://github.com/johncoleman83/advent-of-code)
+  * Clojure solutions compiled using Leiningen - https://leiningen.org/
 
 ## Usage
 
@@ -20,7 +20,7 @@ by year and language solved in
 
 ## Author
 
-David John Coleman II, (davidjohncoleman.com)[http://www.davidjohncoleman.com/]
+David John Coleman II, [davidjohncoleman.com](http://www.davidjohncoleman.com/)
 
 ## License
 
