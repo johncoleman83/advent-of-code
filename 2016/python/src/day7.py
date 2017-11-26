@@ -15,6 +15,7 @@ def readdayinput():
     #return testcase
     thisfile = os.path.basename(__file__)
     thisfile = thisfile[:len(thisfile) - 3]
+    print("{}\n{}".format("-" * len(thisfile), thisfile))
     if __name__ == "__main__":
         resource = "../resources"
     else:
@@ -139,7 +140,6 @@ def app():
     """
     runs day application
     """
-    print("Day #7:")
     dayinput = readdayinput()
     tls_ips = count_tls_ips(dayinput)
     ssl_ips = count_ssl_ips(dayinput)

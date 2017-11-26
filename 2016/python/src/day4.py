@@ -17,6 +17,7 @@ def readdayinput():
     #return testinstructions
     thisfile = os.path.basename(__file__)
     thisfile = thisfile[:len(thisfile) - 3]
+    print("{}\n{}".format("-" * len(thisfile), thisfile))
     if __name__ == "__main__":
         resource = "../resources"
     else:
@@ -84,7 +85,6 @@ def app():
     """
     runs day application
     """
-    print("Day #4:")
     dayinput = readdayinput()
     encryptrooms(dayinput)
 

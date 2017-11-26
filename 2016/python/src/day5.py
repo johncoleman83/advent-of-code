@@ -20,6 +20,7 @@ def readdayinput():
     """
     Reads day input to solve
     """
+    print("{}\n{}".format("-" * len("day5"), "day5"))
     encryption = "cxdnnyjw"
     return encryption
 
@@ -68,7 +69,6 @@ def app():
     """
     runs day application
     """
-    print("Day #5:")
     dayinput = readdayinput()
     password1 = doorpassword1(dayinput)
     print(password1)
