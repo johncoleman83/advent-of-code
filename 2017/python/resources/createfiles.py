@@ -5,7 +5,7 @@ creates template files
 
 def app():
     """
-    runs day application
+    creates blank file for day#input.txt
     """
     day = 1
     while day <= 25:
