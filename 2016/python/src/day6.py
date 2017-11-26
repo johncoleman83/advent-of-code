@@ -46,9 +46,12 @@ def find_repititions(dayinput):
     rotated[:] = zip(*lines[::-1])
     rotated = [''.join(sorted(list(x))) for x in rotated]
     message = []
+    message2 = []
     for line in rotated:
-        message.append(sort_by_frequencies(line)[0])
-    return ''.join(message)
+        newalpha = sort_by_frequencies(line)
+        message.append(newalpha[0])
+        message2.append(newalpha[-1])
+    return "1: {} -- 2: {}".format(''.join(message), ''.join(message2))
 
 def app():
     """
