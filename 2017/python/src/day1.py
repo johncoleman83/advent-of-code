@@ -4,6 +4,7 @@ Advent of Code 2017: Day #
 """
 import os
 
+testcase = "11221"
 def readdayinput():
     """
     Reads day input to solve
@@ -26,7 +27,17 @@ def first_half(dayinput):
     """
     first half solver:
     """
-    lines = dayinput.split('\n')
+    half = len(dayinput) // 2
+    end = len(dayinput)
+    dayinput = dayinput * 2
+    i = 0
+    total = 0
+    while i < end:
+        next_i = i + half
+        if dayinput[i] == dayinput[next_i]:
+            total += int(dayinput[i])
+        i += 1
+    print(total)
 
 def app():
     """
