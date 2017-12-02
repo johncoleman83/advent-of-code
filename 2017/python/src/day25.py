@@ -27,14 +27,27 @@ def first_half(dayinput):
     first half solver:
     """
     lines = dayinput.split('\n')
+    result = None
+
+    return result
+
+def second_half(dayinput):
+    """
+    second half solver:
+    """
+    lines = dayinput.split('\n')
+    result = None
+
+    return result
 
 def app():
     """
     runs day application
     """
     dayinput = readdayinput()
-    result = first_half(dayinput)
-    print(result)
+    half_one = first_half(dayinput)
+    half_two = second_half(dayinput)
+    print(half_one, half_two)
 
 if __name__ == "__main__":
     """
