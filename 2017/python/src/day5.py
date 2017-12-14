@@ -27,18 +27,35 @@ def first_half(dayinput):
     first half solver:
     """
     lines = dayinput.split('\n')
-    result = None
+    lines = [int(i) for i in lines]
+    i = 0
+    steps = 0
+    while i < len(lines) and i >= 0:
+        jump = lines[i]
+        lines[i] += 1
+        i += jump
+        steps += 1
+    return steps
 
-    return result
 
 def second_half(dayinput):
     """
     second half solver:
     """
     lines = dayinput.split('\n')
-    result = None
+    lines = [int(i) for i in lines]
+    i = 0
+    steps = 0
+    while i < len(lines) and i >= 0:
+        jump = lines[i]
+        if jump >= 3:
+            lines[i] -= 1
+        else:
+            lines[i] += 1
+        i += jump
+        steps += 1
+    return steps
 
-    return result
 
 def app():
     """

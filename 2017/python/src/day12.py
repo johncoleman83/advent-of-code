@@ -27,7 +27,7 @@ def first_half(dayinput):
     first half solver:
     """
     lines = dayinput.split('\n')
-    result = None
+
 
     return result
 

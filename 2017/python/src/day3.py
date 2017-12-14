@@ -33,9 +33,11 @@ def first_half(dayinput):
     """
     first half solver:
     """
-    loop = [[1]]
-    n = 2
+    loop = []
+    n = 1
     while n < dayinput:
+        loop.append([n])
+        n += 1
         # right
         end = len(loop) + 1
         while len(loop[-1]) < end:
@@ -59,8 +61,6 @@ def first_half(dayinput):
             loop[i].insert(0, n)
             n += 1
             i += 1
-        loop.append([n])
-        n += 1
     i = 0
     while i < len(loop):
         if dayinput in loop[i]:
@@ -74,13 +74,80 @@ def first_half(dayinput):
     steps += abs(half - col)
     return steps
 
+def check_num(n):
+    return n >= 361527
+
 def second_half(dayinput):
     """
     second half solver:
     """
-    result = None
+    loop = []
+    n = 1
+    while n < dayinput:
+        loop.append([n])
+        # right
+        end = len(loop) + 1
+        while len(loop[-1]) < end:
+            try:
+                n += loop[-2][len(loop[-1]) + 1]
+            except:
+                pass
+            try:
+                n += loop[-2][len(loop[-1])]
+            except:
+                pass
+            try:
+                n += loop[-2][len(loop[-1]) - 1]
+            except:
+                pass
+            loop[-1].append(n)
 
-    return result
+        # up
+        i = len(loop) - 2
+        while i >= 0:
+            n += loop[i + 1][-2]
+            n += loop[i][-1]
+            if i - 1 != -1:
+                n += loop[i - 1][-1]
+            loop[i].append(n)
+            i -= 1
+        n += loop[0][-2]
+        loop.insert(0, [n])
+        # left
+        while len(loop[0]) < len(loop) + 1:
+            n += loop[1][-len(loop[0])]
+            try:
+                n += loop[1][-len(loop[0]) - 1]
+            except:
+                pass
+            try:
+                n += loop[1][-len(loop[0]) - 2]
+            except:
+                pass
+            loop[0].insert(0, n)
+        # down
+        i = 1
+        while i < len(loop[0]):
+            n += loop[i - 1][1]
+            try:
+                n += loop[i][0]
+            except:
+                pass
+            try:
+                n += loop[i + 1][0]
+            except:
+                pass
+            if i == len(loop[0]) - 1:
+                break
+            loop[i].insert(0, n)
+            i += 1
+    result = []
+    for row in loop:
+        for col in row:
+            if check_num(col):
+                result.append(col)
+    return min(result)
+
 
 def app():
     """
