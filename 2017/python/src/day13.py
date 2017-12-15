@@ -31,11 +31,22 @@ def first_half(dayinput):
 
     return result
 
+def run_firewall(firewall):
+    
+
 def second_half(dayinput):
     """
     second half solver:
     """
     lines = dayinput.split('\n')
+    all_layers = {}
+    for line in lines:
+        layer, depth = line.split(': ')
+        all_layers[int(layer)] = int(depth)
+    last_layer = max(list(all_layers.keys()))
+    for i in range(last_layer):
+        if i not in all_layers:
+            all_layers[i] = None
     result = None
 
     return result
