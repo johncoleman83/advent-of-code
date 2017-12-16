@@ -22,14 +22,48 @@ def readdayinput():
     return dayinput
 
 
-def first_half(dayinput):
+def first_half(stream):
     """
     first half solver:
     """
-    lines = dayinput.split('\n')
-    result = None
-
-    return result
+    stream = [x for x in stream]
+    i = 0
+    garbage = 0
+    while i < len(stream):
+        if stream[i] == '!':
+            del stream[i]
+            del stream[i]
+            continue
+        if stream[i] == '<':
+            start = i
+            temp = i
+            while temp < len(stream):
+                if stream[temp] == '!':
+                    del stream[temp]
+                    del stream[temp]
+                    continue
+                if stream[temp] == '>':
+                    end = temp
+                    break
+                temp += 1
+            garbage += (end - start - 1)
+            stream = stream[:start] + stream[end + 1:]
+        i += 1
+    stream = ''.join(stream)
+    stream = stream.replace(',', '')
+    #print(stream)
+    stream = [x for x in stream]
+    q = []
+    i = 0
+    count = 0
+    while i < len(stream):
+        if stream[i] == '{':
+            q.append('{')
+        if stream[i] == '}':
+            count += len(q)
+            q.pop()
+        i += 1
+    return [count, garbage]
 
 def second_half(dayinput):
     """
