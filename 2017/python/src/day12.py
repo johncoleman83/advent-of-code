@@ -27,18 +27,47 @@ def first_half(dayinput):
     first half solver:
     """
     lines = dayinput.split('\n')
+    programs = {}
+    for line in lines:
+        key, val = line.split(' <-> ')
+        val = [int(x) for x in val.split(', ')]
+        programs[int(key)] = val
+    connections = [0]
+    index = 0
+    while index < len(connections):
+        to_check = connections[index]
+        for p in programs[to_check]:
+            if p not in connections:
+                connections.append(p)
+        index += 1
+    return len(connections)
 
-
-    return result
 
 def second_half(dayinput):
     """
     second half solver:
     """
     lines = dayinput.split('\n')
-    result = None
+    programs = {}
+    for line in lines:
+        key, val = line.split(' <-> ')
+        val = [int(x) for x in val.split(', ')]
+        programs[int(key)] = val
+    connections = [0]
+    max_p = max([programs.keys()])
+    total = set()
+    for prog in programs.keys():
+        connections = [prog]
+        index = 0
+        while index < len(connections):
+            to_check = connections[index]
+            for p in programs[to_check]:
+                if p not in connections:
+                    connections.append(p)
+            index += 1
+        total.add(''.join([str(x) for x in sorted(set(connections))]))
 
-    return result
+    return len(total)
 
 def app():
     """
