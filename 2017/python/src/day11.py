@@ -3,23 +3,7 @@
 Advent of Code 2017: Day #
 """
 import os
-
-def readdayinput():
-    """
-    Reads day input to solve
-    """
-    thisfile = os.path.basename(__file__)
-    thisfile = thisfile[:len(thisfile) - 3]
-    print("{}\n{}".format("-" * len(thisfile), thisfile))
-    if __name__ == "__main__":
-        resource = "../resources"
-    else:
-        resource = "./resources"
-    dayinputfile = "{}/{}input.txt".format(resource, thisfile)
-    with open(dayinputfile, mode='r', encoding='utf-8') as fileio:
-        dayinput = fileio.read()
-    dayinput = dayinput.strip('\n')
-    return dayinput
+from readdayinput import readdayinput
 
 
 def first_half(d):
@@ -59,9 +43,8 @@ def first_half(d):
     vert = n - s
     horzr = ne - sw
     horzl = nw - se
-'''
+    '''
     print("vert, horzr, horzl", vert, horzr, horzl)
-   
     result = None
     return result
 
@@ -71,7 +54,6 @@ def second_half(dayinput):
     """
     lines = dayinput.split('\n')
     result = None
-
     return result
 
 def app():
