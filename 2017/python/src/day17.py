@@ -26,10 +26,23 @@ def first_half(dayinput):
     """
     first half solver:
     """
-    lines = dayinput.split('\n')
-    result = None
-
-    return result
+    # 344
+    circlebuffer = [0]
+    current_pos = 0
+    steps = 344
+    index = 0
+    count = 1
+    size = 1
+    all_zeros = []
+    while count < 50000001:
+        index += steps + 1
+        index = index % size
+        # ciclebuffer.insert(index, count)
+        if index == 0:
+            all_zeros.append(count)
+        size += 1
+        count += 1
+    return all_zeros[-1]
 
 def second_half(dayinput):
     """
