@@ -16,7 +16,7 @@ My solutions for Advent of Code organized by **year** and **language** solved in
   * Code uses .txt files as input, the output will reveal solutions to AOC Problems.
 
 * Python:
-  * Execute `$ ./app.py` from python root directory to see all day solutions
+  * Execute `$ ./day1.py` from a directory such as `advent-of-code/2015/python/src`
 
 ## Author
 
