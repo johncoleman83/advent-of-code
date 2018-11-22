@@ -3,9 +3,9 @@
 Advent of Code 2017: Day #
 """
 import os
-from readdayinput import readdayinput
+import sys
+from shared.readdayinput import readdayinput
 testcase = "11221"
-
 
 def first_half(dayinput):
     """
@@ -21,7 +21,7 @@ def first_half(dayinput):
         if dayinput[i] == dayinput[next_i]:
             total += int(dayinput[i])
         i += 1
-    print(total)
+    return total
 
 def app():
     """

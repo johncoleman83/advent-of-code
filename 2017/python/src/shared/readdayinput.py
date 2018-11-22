@@ -14,8 +14,8 @@ def readdayinput():
     inputtxt = "{}input.txt".format(THISFILE)
     if os.path.exists("../resources/{}".format(inputtxt)):
         dayinputfile = "../resources/{}".format(inputtxt)
-    elif os.path.exists("./resources/{}".format(inputtxt)):
-        dayinputfile = "./resources/{}".format(inputtxt)
+    elif os.path.exists("../resources/{}".format(inputtxt)):
+        dayinputfile = "../resources/{}".format(inputtxt)
     else:
         print('error, no input text file', file=sys.stderr)
         sys.exit(1)

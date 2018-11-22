@@ -3,7 +3,7 @@
 Advent of Code 2017: Day #
 """
 import os
-from readdayinput import readdayinput
+from shared.readdayinput import readdayinput
 #from gridday14 import GRID
 
 def knot_hash(dayinput):

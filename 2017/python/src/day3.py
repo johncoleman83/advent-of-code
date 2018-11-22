@@ -3,7 +3,7 @@
 Advent of Code 2017: Day #
 """
 import os
-from readdayinput import readdayinput
+from shared.readdayinput import readdayinput
 test = [
     [17,  16,  15,  14,  13],
     [18,   5,   4,   3,  12],

@@ -3,7 +3,7 @@
 Advent of Code 2017: Day #
 """
 import os
-from readdayinput import readdayinput
+from shared.readdayinput import readdayinput
 
 TEST = """0: 3
 1: 2
