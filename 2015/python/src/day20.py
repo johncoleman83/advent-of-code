@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Advent of Code 2018: Day #
+Advent of Code 2015: Day #
 """
 import os
 from shared.readdayinput import readdayinput
