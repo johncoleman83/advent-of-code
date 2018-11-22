@@ -1,6 +1,9 @@
 #!/usr/bin/env python3
 """
 Advent of Code 2018: Day #
+An opening parenthesis, (, means he should go up one floor
+and a closing parenthesis, ), means he should go down one floor.
+
 """
 import os
 from shared.readdayinput import readdayinput
@@ -9,8 +12,7 @@ def first_half(dayinput):
     """
     first half solver:
     """
-    lines = dayinput.split('\n')
-    result = None
+    result = dayinput.count('(') - dayinput.count(')')
 
     return result
 
@@ -18,10 +20,17 @@ def second_half(dayinput):
     """
     second half solver:
     """
-    lines = dayinput.split('\n')
-    result = None
-
-    return result
+    i = 0
+    floor = 0
+    while i < len(dayinput):
+        if dayinput[i] == '(':
+            floor += 1
+        elif dayinput[i] == ')':
+            floor -=1
+        if floor == -1:
+            return i + 1
+        i += 1
+    return -1
 
 def app():
     """
