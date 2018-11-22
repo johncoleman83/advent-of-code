@@ -3,7 +3,6 @@
 Advent of Code 2017: Day #
 """
 import os
-import sys
 from shared.readdayinput import readdayinput
 testcase = "11221"
 

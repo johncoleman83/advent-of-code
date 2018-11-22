@@ -7,7 +7,7 @@ def app():
     """
     creates blank file for day#.py python files
     """
-    day = 3
+    day = 1
     while day <= 25:
         template = "template.py"
         with open(template, mode='r', encoding='utf-8') as file_io:

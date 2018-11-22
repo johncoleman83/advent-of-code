@@ -5,9 +5,9 @@ creates template files
 
 def app():
     """
-    runs day application
+    creates blank file for day#input.txt
     """
-    day = 10
+    day = 1
     while day <= 25:
         filename = "day{}input.txt".format(day)
         with open(filename, mode='w', encoding='utf-8') as file_io:
