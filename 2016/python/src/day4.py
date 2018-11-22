@@ -4,29 +4,14 @@ Advent of Code 2016: Day 4
 """
 import os
 import string
+from shared.readdayinput import readdayinput
+
 testinstructions = """aaaaa-bbb-z-y-x-123[abxyz]
 a-b-c-d-e-f-g-h-987[abcde]
 not-a-real-room-404[oarel]
 totally-real-room-200[decoy]"""
 # sum of test instructions: `1514`
 
-def readdayinput():
-    """
-    Reads day input to solve
-    """
-    #return testinstructions
-    thisfile = os.path.basename(__file__)
-    thisfile = thisfile[:len(thisfile) - 3]
-    print("{}\n{}".format("-" * len(thisfile), thisfile))
-    if __name__ == "__main__":
-        resource = "../resources"
-    else:
-        resource = "./resources"
-    dayinputfile = "{}/{}input.txt".format(resource, thisfile)
-    with open(dayinputfile, mode='r', encoding='utf-8') as fileio:
-        dayinput = fileio.read()
-    dayinput = dayinput.strip('\n')
-    return dayinput
 
 def sort_by_frequencies(alphas):
     """

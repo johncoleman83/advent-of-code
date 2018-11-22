@@ -3,30 +3,13 @@
 Advent of Code 2016: Day 2
 """
 import os
+from shared.readdayinput import readdayinput
+
 debugging = "RRDDD"
 testinstructions = """ULL
 RRDDD
 LURDL
 UUUUD"""
-
-def readdayinput():
-    """
-    Reads day input to solve
-    """
-    thisfile = os.path.basename(__file__)
-    thisfile = thisfile[:len(thisfile) - 3]
-    print("{}\n{}".format("-" * len(thisfile), thisfile))
-    if __name__ == "__main__":
-        resource = "../resources"
-    else:
-        resource = "./resources"
-    dayinputfile = "{}/{}input.txt".format(resource, thisfile)
-    with open(dayinputfile, mode='r', encoding='utf-8') as fileio:
-        dayinput = fileio.read()
-    dayinput = dayinput.strip('\n')
-    #dayinput = debugging
-    #dayinput = testinstructions
-    return dayinput
 
 def solvebathroom(dayinput):
     """

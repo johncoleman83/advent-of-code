@@ -3,6 +3,7 @@
 Advent of Code 2016: Day 5
 """
 import hashlib
+
 decrypted = [
     "00000fe1e92080b9951b053e70e31fcb",
     "000007c827126c81fa664211693f2540",
