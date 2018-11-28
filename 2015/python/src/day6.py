@@ -10,12 +10,16 @@ from shared.readdayinput import readdayinput
 
 class GridLights(object):
 
-    def __init__(self):
+    def __init__(self, v2 = False):
+        self.v2 = v2
         self.grid = self.make_grid()
         self.TASK_TO_FUNC = {
             'on': self.turn_on,
             'off': self.turn_off,
-            'toggle': self.toggle
+            'toggle': self.toggle,
+            'on_v2': self.turn_on_v2,
+            'off_v2': self.turn_off_v2,
+            'toggle_v2': self.toggle_v2
         }
 
     def make_grid(self):
@@ -34,6 +38,16 @@ class GridLights(object):
     def toggle(self, coords):
         state = self.grid.get(coords, 0)
         self.grid[coords] = 0 if state == 1 else 1
+
+    def turn_on_v2(self, coords):
+        self.grid[coords] += 1
+    
+    def turn_off_v2(self, coords):
+        if self.grid[coords] > 0:
+            self.grid[coords] -= 1
+
+    def toggle_v2(self, coords):
+        self.grid[coords] += 2
 
     def loop_and_do_task(self, corner_one, corner_two, f):
         for y in range(corner_one[1], corner_two[1] + 1):
@@ -55,8 +69,10 @@ class GridLights(object):
         corner_one = self.string_to_coords(instruction_list[-3])
         corner_two = self.string_to_coords(instruction_list[-1])
         task = instruction_list[0]
-        if task != 'toggle':
+        if task == 'turn':
             task = instruction_list[1]
+        if self.v2 == True:
+            task += '_v2'
         #print(task, instruction_list)
         self.do_task(corner_one, corner_two, task)
 
@@ -81,11 +97,13 @@ def first_half(dayinput):
 def second_half(dayinput):
     """
     second half solver:
+    What is the total brightness of all lights combined after following Santa's instructions?
     """
-    lines = dayinput.split('\n')
-    result = None
-
-    return result
+    instructions = dayinput.split('\n')
+    lights = GridLights(True)
+    for instruction in instructions:
+        lights.parse_instructions_and_do(instruction)
+    return lights.on_lights_count()
 
 def app():
     """
@@ -93,8 +111,9 @@ def app():
     """
     dayinput = readdayinput()
     half_one = first_half(dayinput)
+    print(half_one)
     half_two = second_half(dayinput)
-    print(half_one, half_two)
+    print(half_two)
 
 if __name__ == "__main__":
     """
