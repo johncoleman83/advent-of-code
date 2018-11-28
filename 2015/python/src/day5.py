@@ -35,7 +35,6 @@ def repeat_with_middle(s):
     return False
 
 def repeat_same_two(s):
-    results = []
     for i in range(1, len(s) - 1):
         if "{}{}".format(s[i - 1], s[i]) in s[i + 1:]: return True
     return False
