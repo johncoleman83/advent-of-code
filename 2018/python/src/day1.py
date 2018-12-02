@@ -39,8 +39,9 @@ def app():
     """
     dayinput = readdayinput()
     half_one = first_half(dayinput)
+    print(half_one)
     half_two = second_half(dayinput)
-    print(half_one, half_two)
+    print(half_two)
 
 if __name__ == "__main__":
     """
